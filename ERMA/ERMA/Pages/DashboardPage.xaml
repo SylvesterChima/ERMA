@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ERMA.Pages.DashboardPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:ERMA.CustomControls"
+    BackgroundColor="{DynamicResource PrimaryBgColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid
+            Margin="0"
+            Padding="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <customcontrols:UCHeader />
+            <ScrollView Grid.Row="1" Padding="20,29,20,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout HorizontalOptions="StartAndExpand" Spacing="0">
+                            <Label
+                                FontFamily="OPSemiBold"
+                                FontSize="18"
+                                Text="{Binding Username}"
+                                TextColor="{DynamicResource Black}" />
+                            <Label
+                                FontFamily="OPRegular"
+                                FontSize="18"
+                                Text="Welcome to ERM Application"
+                                TextColor="{DynamicResource Black}" />
+                        </StackLayout>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="{DynamicResource PrimaryColor}"
+                            CornerRadius="21"
+                            HasShadow="False"
+                            HeightRequest="42"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="42">
+                            <Image
+                                HorizontalOptions="CenterAndExpand"
+                                Source="user.png"
+                                VerticalOptions="CenterAndExpand" />
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GotoProfile}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </StackLayout>
+                    <Grid
+                        Grid.Row="1"
+                        Margin="0,36,0,0"
+                        ColumnSpacing="20"
+                        RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HorizontalOptions="FillAndExpand">
+                            <StackLayout Padding="20">
+                                <Image
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="users.png"
+                                    VerticalOptions="StartAndExpand" />
+
+                                <StackLayout
+                                    Margin="0,40,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="EndAndExpand">
+                                    <Label
+                                        FontFamily="OPSemiBold"
+                                        FontSize="18"
+                                        Text="Visitors"
+                                        TextColor="{DynamicResource PrimaryColor}" />
+                                    <Label
+                                        FontFamily="OPSemiBold"
+                                        FontSize="18"
+                                        Text="{Binding VisitorsCount}"
+                                        TextColor="{DynamicResource Black}" />
+                                </StackLayout>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding VisitorsCommand}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame
+                            Grid.Column="1"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="150"
+                            HorizontalOptions="FillAndExpand">
+                            <StackLayout Padding="20">
+                                <Image
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="message_square.png"
+                                    VerticalOptions="StartAndExpand" />
+
+                                <StackLayout
+                                    Margin="0,40,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="EndAndExpand">
+                                    <Label
+                                        FontFamily="OPSemiBold"
+                                        FontSize="18"
+                                        Text="Message"
+                                        TextColor="{DynamicResource PrimaryColor}" />
+                                    <Label
+                                        FontFamily="OPSemiBold"
+                                        FontSize="18"
+                                        Text="{Binding MessageCount}"
+                                        TextColor="{DynamicResource Black}" />
+                                </StackLayout>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding MessageCommand}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Frame
+                            Grid.Row="2"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HorizontalOptions="FillAndExpand">
+                            <StackLayout Padding="20">
+                                <Image
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="credit_card.png"
+                                    VerticalOptions="StartAndExpand" />
+
+                                <StackLayout
+                                    Margin="0,40,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="EndAndExpand">
+                                    <Label
+                                        FontFamily="OPSemiBold"
+                                        FontSize="18"
+                                        Text="Outstanding"
+                                        TextColor="{DynamicResource PrimaryColor}" />
+                                    <Label
+                                        FontFamily="OPSemiBold"
+                                        FontSize="18"
+                                        Text="{Binding OutstandingAmount}"
+                                        TextColor="{DynamicResource Black}" />
+                                </StackLayout>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OutstandingCommand}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource Transparent}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="150"
+                            HorizontalOptions="FillAndExpand">
+                            <StackLayout Padding="20">
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="{DynamicResource PrimaryColor}"
+                                    CornerRadius="15"
+                                    HasShadow="False"
+                                    HeightRequest="78"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="78">
+                                    <Image
+                                        HorizontalOptions="CenterAndExpand"
+                                        Source="bell.png"
+                                        VerticalOptions="CenterAndExpand" />
+                                </Frame>
+
+                                <Label
+                                    FontFamily="OPSemiBold"
+                                    FontSize="18"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Notification"
+                                    TextColor="{DynamicResource PrimaryColor}" />
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding NotificationCommand}"
+                                    CommandParameter="Visitors"
+                                    NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </Grid>
+                    <StackLayout
+                        Grid.Row="2"
+                        Margin="0,40,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPSemiBold"
+                            FontSize="18"
+                            Text="Estate News Flash"
+                            TextColor="{DynamicResource Black}" />
+                    </StackLayout>
+
+                    <StackLayout
+                        Grid.Row="3"
+                        Margin="0,27,0,0"
+                        BindableLayout.ItemsSource="{Binding EstateNewsFlash}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    Margin="0,0,0,5"
+                                    Padding="10"
+                                    BackgroundColor="{DynamicResource White}"
+                                    BorderColor="{DynamicResource Grey}"
+                                    CornerRadius="10"
+                                    HasShadow="False">
+                                    <StackLayout>
+                                        <Label
+                                            FontFamily="OPLight"
+                                            FontSize="18"
+                                            Text="Subject:"
+                                            TextColor="{DynamicResource PrimaryColor}" />
+                                        <Label
+                                            FontFamily="OPRegular"
+                                            FontSize="18"
+                                            Text="{Binding Subject}"
+                                            TextColor="{DynamicResource Black}" />
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="OPRegular"
+                                                    FontSize="18"
+                                                    Text="Status:"
+                                                    TextColor="{DynamicResource Black}" />
+                                                <Label
+                                                    FontFamily="OPSemiBold"
+                                                    FontSize="18"
+                                                    Text="{Binding Status}"
+                                                    TextColor="{DynamicResource Black}" />
+                                            </StackLayout>
+                                            <Label
+                                                Margin="0,0,10,0"
+                                                FontAttributes="Italic"
+                                                FontSize="18"
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="View"
+                                                TextColor="{DynamicResource PrimaryColor}">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Command="{Binding ViewCommand}"
+                                                        CommandParameter="{Binding NewsId}"
+                                                        NumberOfTapsRequired="1" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ERMA.Pages.VendorsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:ERMA.CustomControls"
+    BackgroundColor="{DynamicResource PrimaryBgColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid
+            Margin="0"
+            Padding="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <customcontrols:UCHeader />
+            <StackLayout Grid.Row="1" Padding="20,29,20,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Frame
+                            Margin="0,0,46,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HeightRequest="43">
+                            <StackLayout Padding="20,0,15,0" Orientation="Horizontal">
+                                <customcontrols:BorderlessEntry
+                                    FontFamily="OPLight"
+                                    FontSize="14"
+                                    HorizontalOptions="FillAndExpand"
+                                    Placeholder="Search Vendor"
+                                    PlaceholderColor="{DynamicResource Black}"
+                                    TextColor="{DynamicResource Black}" />
+                                <Image HorizontalOptions="End" Source="search.png" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame
+                            Grid.Column="1"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HeightRequest="43">
+                            <StackLayout Padding="20,0,15,0" Orientation="Horizontal">
+                                <Label
+                                    FontFamily="OPLight"
+                                    FontSize="14"
+                                    Text="Filter"
+                                    TextColor="{DynamicResource Black}"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Image HorizontalOptions="End" Source="filter.png" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+
+
+                    <CollectionView
+                        Grid.Row="1"
+                        Margin="0,30,0,0"
+                        ItemsSource="{Binding Vendors}"
+                        SelectionMode="None">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.EmptyView>
+                            <StackLayout>
+                                <Label
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="No result found."
+                                    TextColor="Gray"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </CollectionView.EmptyView>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="10" Padding="8">
+                                    <Frame
+                                        Padding="10"
+                                        BackgroundColor="{DynamicResource White}"
+                                        BorderColor="{DynamicResource Grey}"
+                                        CornerRadius="10"
+                                        HasShadow="False"
+                                        HorizontalOptions="FillAndExpand">
+
+                                        <StackLayout>
+                                            <Label
+                                                FontFamily="OPRegular"
+                                                FontSize="18"
+                                                Text="{Binding VendorType}"
+                                                TextColor="{DynamicResource PrimaryColor}" />
+                                            <StackLayout Margin="0,10,0,0" Spacing="0">
+                                                <Label
+                                                    FontFamily="OPLight"
+                                                    FontSize="14"
+                                                    Text="Name:"
+                                                    TextColor="{DynamicResource Black}" />
+                                                <Label
+                                                    FontFamily="OPRegular"
+                                                    FontSize="14"
+                                                    Text="{Binding Name}"
+                                                    TextColor="{DynamicResource Black}" />
+                                            </StackLayout>
+                                            <StackLayout Margin="0,10,0,0" Spacing="0">
+                                                <Label
+                                                    FontFamily="OPLight"
+                                                    FontSize="14"
+                                                    Text="Contact:"
+                                                    TextColor="{DynamicResource Black}" />
+                                                <Label
+                                                    FontFamily="OPRegular"
+                                                    FontSize="14"
+                                                    Text="{Binding Contact}"
+                                                    TextColor="{DynamicResource Black}" />
+                                            </StackLayout>
+                                            <StackLayout Margin="0,10,0,0" Spacing="0">
+                                                <Label
+                                                    FontFamily="OPLight"
+                                                    FontSize="14"
+                                                    Text="Telephone:"
+                                                    TextColor="{DynamicResource Black}" />
+                                                <Label
+                                                    FontFamily="OPRegular"
+                                                    FontSize="14"
+                                                    Text="{Binding Phone}"
+                                                    TextColor="{DynamicResource Black}" />
+                                            </StackLayout>
+                                            <StackLayout Margin="0,10,0,0" Spacing="0">
+                                                <Label
+                                                    FontFamily="OPLight"
+                                                    FontSize="14"
+                                                    Text="Email:"
+                                                    TextColor="{DynamicResource Black}" />
+                                                <Label
+                                                    FontFamily="OPRegular"
+                                                    FontSize="14"
+                                                    Text="{Binding Email}"
+                                                    TextColor="{DynamicResource Black}" />
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding VendorCommand}" NumberOfTapsRequired="1" />
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

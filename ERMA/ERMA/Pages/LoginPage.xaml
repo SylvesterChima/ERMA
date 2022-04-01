@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ERMA.Pages.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:ERMA.CustomControls"
+    BackgroundColor="{DynamicResource PrimaryBgColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20,110,20,20">
+                <Label
+                    FontFamily="OPSemiBold"
+                    FontSize="24"
+                    Text="{Binding WelcomeText}"
+                    TextColor="{DynamicResource Black}" />
+                <Label
+                    FontFamily="OPRegular"
+                    FontSize="24"
+                    Text="Kindly input your details"
+                    TextColor="{DynamicResource Black}" />
+
+                <StackLayout Margin="0,50,0,0" Spacing="0">
+                    <Label
+                        FontFamily="OPRegular"
+                        FontSize="18"
+                        Text="Username"
+                        TextColor="{DynamicResource Black}" />
+                    <Frame
+                        Margin="0,10,0,0"
+                        Padding="0"
+                        BackgroundColor="{DynamicResource White}"
+                        BorderColor="{DynamicResource Grey}"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        HeightRequest="48">
+                        <customcontrols:BorderlessEntry
+                            Margin="15,0,15,0"
+                            FontSize="14"
+                            TextColor="{DynamicResource Black}" />
+                    </Frame>
+
+                    <Label
+                        Margin="0,25,0,0"
+                        FontFamily="OPRegular"
+                        FontSize="18"
+                        Text="Password"
+                        TextColor="{DynamicResource Black}" />
+                    <Frame
+                        Margin="0,10,0,0"
+                        Padding="0"
+                        BackgroundColor="{DynamicResource White}"
+                        BorderColor="{DynamicResource Grey}"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        HeightRequest="48">
+                        <customcontrols:BorderlessEntry
+                            Margin="15,0,15,0"
+                            FontSize="14"
+                            TextColor="{DynamicResource Black}" />
+                    </Frame>
+
+                    <StackLayout Margin="0,14,0,0" Orientation="Horizontal">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            HorizontalOptions="StartAndExpand"
+                            Text="Forget Password?"
+                            TextColor="{DynamicResource Black}" />
+                        <Label
+                            FontAttributes="Italic"
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Contact Admin"
+                            TextColor="{DynamicResource PrimaryColor}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GotoAdminContact}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <Button
+                        Margin="38,48,38,0"
+                        BackgroundColor="{DynamicResource PrimaryColor}"
+                        Command="{Binding GotoDashboard}"
+                        CornerRadius="200"
+                        FontFamily="OPSemiBold"
+                        FontSize="18"
+                        HeightRequest="50"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Login"
+                        TextColor="{DynamicResource White}"
+                        TextTransform="None" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

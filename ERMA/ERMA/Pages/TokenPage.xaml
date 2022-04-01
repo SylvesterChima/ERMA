@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ERMA.Pages.TokenPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:ERMA.CustomControls"
+    BackgroundColor="{DynamicResource PrimaryBgColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid
+            Margin="0"
+            Padding="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <customcontrols:UCHeader />
+            <ScrollView Grid.Row="1" Padding="20,29,20,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        FontFamily="OPSemiBold"
+                        FontSize="24"
+                        Text="Kindly generate token"
+                        TextColor="{DynamicResource PrimaryColor}" />
+                    <StackLayout
+                        Grid.Row="1"
+                        Margin="0,31,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Visitor's Name"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <customcontrols:BorderlessEntry
+                                Margin="15,0,15,0"
+                                FontFamily="OPLight"
+                                FontSize="14"
+                                Placeholder="Visitor's Name"
+                                PlaceholderColor="{DynamicResource Black}"
+                                TextColor="{DynamicResource Black}" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Visitor Email"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <customcontrols:BorderlessEntry
+                                Margin="15,0,15,0"
+                                FontFamily="OPLight"
+                                FontSize="14"
+                                Keyboard="Email"
+                                Placeholder="Visitor Email"
+                                PlaceholderColor="{DynamicResource Black}"
+                                TextColor="{DynamicResource Black}" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="3"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Purpose"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <customcontrols:BorderlessEntry
+                                Margin="15,0,15,0"
+                                FontFamily="OPLight"
+                                FontSize="14"
+                                Placeholder="Purpose"
+                                PlaceholderColor="{DynamicResource Black}"
+                                TextColor="{DynamicResource Black}" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="4"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Number of visitors"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <customcontrols:BorderlessEntry
+                                Margin="15,0,15,0"
+                                FontFamily="OPLight"
+                                FontSize="14"
+                                Keyboard="Numeric"
+                                Placeholder="Number of visitors"
+                                PlaceholderColor="{DynamicResource Black}"
+                                TextColor="{DynamicResource Black}" />
+                        </Frame>
+                    </StackLayout>
+                    <Button
+                        Grid.Row="5"
+                        Margin="0,50,0,20"
+                        Padding="80,0,80,0"
+                        BackgroundColor="{DynamicResource PrimaryColor}"
+                        Command="{Binding GenerateTokenCommand}"
+                        CornerRadius="50"
+                        FontFamily="OPSemiBold"
+                        FontSize="18"
+                        HeightRequest="50"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Generate Token"
+                        TextColor="{DynamicResource White}"
+                        TextTransform="None" />
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

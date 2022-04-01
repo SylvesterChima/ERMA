@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ERMA.Pages.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:ERMA.CustomControls"
+    BackgroundColor="{DynamicResource PrimaryBgColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid
+            Margin="0"
+            Padding="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <customcontrols:UCHeader />
+            <ScrollView Grid.Row="1" Padding="20,29,20,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Full Name"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.Fullname}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="1"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Residence ID"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.ResidenceID}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Phone"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.Phone}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="3"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Marital Status"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.MaritalStatus}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="4"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Gender"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.Gender}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="5"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Apartment Type"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.ApartmentType}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="6"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Apartment Info"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.ApartmentInfo}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="7"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Date of Birth"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.DateOfBirth, StringFormat='{0:MMMM dd, yyyy}'}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="8"
+                        Margin="0,15,0,0"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="House Address"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.HouseAddress}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="9"
+                        Margin="0,15,0,20"
+                        Spacing="0">
+                        <Label
+                            FontFamily="OPRegular"
+                            FontSize="18"
+                            Text="Zone"
+                            TextColor="{DynamicResource Black}" />
+                        <Frame
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource White}"
+                            BorderColor="{DynamicResource Grey}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="48">
+                            <Label
+                                Margin="15,0,15,0"
+                                FontFamily="OPRegular"
+                                FontSize="14"
+                                Text="{Binding User.Zone}"
+                                TextColor="{DynamicResource Black}"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
