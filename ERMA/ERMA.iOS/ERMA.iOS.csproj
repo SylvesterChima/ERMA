@@ -165,4 +165,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\chevron_down.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\e_dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\complaints.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrow_left.png" />
+  </ItemGroup>
 </Project>
