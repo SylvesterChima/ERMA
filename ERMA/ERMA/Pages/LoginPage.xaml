@@ -83,7 +83,7 @@
                         Margin="38,48,38,0"
                         BackgroundColor="{DynamicResource PrimaryColor}"
                         Command="{Binding GotoDashboard}"
-                        CornerRadius="200"
+                        CornerRadius="25"
                         FontFamily="OPSemiBold"
                         FontSize="18"
                         HeightRequest="50"

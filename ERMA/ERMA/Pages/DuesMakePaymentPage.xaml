@@ -189,7 +189,7 @@
                         Padding="120,0,120,0"
                         BackgroundColor="{DynamicResource PrimaryColor}"
                         Command="{Binding PayCommand}"
-                        CornerRadius="50"
+                        CornerRadius="25"
                         FontFamily="OPSemiBold"
                         FontSize="18"
                         HeightRequest="50"
